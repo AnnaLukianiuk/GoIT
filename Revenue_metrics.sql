@@ -1,3 +1,9 @@
+SELECT user_id, game_name, "language", has_older_device_model, age
+FROM project.games_paid_users;
+
+SELECT user_id, game_name, payment_date, revenue_amount_usd
+FROM project.games_payments;
+
 WITH monthly_revenue AS (
 	SELECT 
 			date(date_trunc('month', payment_date)) AS payment_month,
